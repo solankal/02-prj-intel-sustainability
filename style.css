@@ -1,1 +1,203 @@
-/* Add your CSS here */
+:root {
+	--intel-blue: #0068b5;
+	--intel-deep-blue: #003c71;
+	--intel-ink: #172b3a;
+	--intel-pale-blue: #eaf6ff;
+	--intel-line: #8bc8ed;
+	--white: #ffffff;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	color: var(--intel-ink);
+	background: #f4f8fb;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero {
+	min-height: 430px;
+	display: flex;
+	align-items: center;
+	padding: 56px 7vw;
+	color: var(--white);
+	background: linear-gradient(125deg, #002b52 0%, var(--intel-blue) 58%, #00a3e0 100%);
+}
+
+.hero-content {
+	width: min(780px, 100%);
+}
+
+.hero img {
+	width: 150px;
+	height: auto;
+	margin-bottom: 38px;
+	filter: brightness(0) invert(1);
+}
+
+h1,
+h2,
+h3,
+p {
+	margin-top: 0;
+}
+
+h1 {
+	max-width: 720px;
+	margin-bottom: 22px;
+	font-size: clamp(2.6rem, 6vw, 5.7rem);
+	line-height: 0.98;
+	letter-spacing: -0.04em;
+}
+
+.hero p {
+	max-width: 610px;
+	margin-bottom: 0;
+	color: #e5f6ff;
+	font-size: 1.15rem;
+	line-height: 1.7;
+}
+
+.timeline {
+	display: flex;
+	gap: 24px;
+	padding: 72px 7vw 58px;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-padding: 7vw;
+	overscroll-behavior-x: contain;
+}
+
+.milestone-card {
+	position: relative;
+	flex: 0 0 310px;
+	min-height: 455px;
+	padding: 24px;
+	overflow: hidden;
+	border-top: 5px solid var(--intel-blue);
+	background: var(--white);
+	box-shadow: 0 12px 28px rgba(0, 60, 113, 0.11);
+	scroll-snap-align: start;
+	transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.milestone-card:hover,
+.milestone-card:focus-within {
+	transform: translateY(-10px);
+	box-shadow: 0 20px 36px rgba(0, 60, 113, 0.2);
+}
+
+.milestone-card h2 {
+	margin-bottom: 8px;
+	color: var(--intel-blue);
+	font-size: 2rem;
+}
+
+.milestone-card h3 {
+	min-height: 54px;
+	margin-bottom: 16px;
+	color: var(--intel-deep-blue);
+	font-size: 1.25rem;
+}
+
+.milestone-card img {
+	display: block;
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	margin-bottom: 18px;
+	transition: transform 350ms ease, filter 350ms ease;
+}
+
+.milestone-card:hover img,
+.milestone-card:focus-within img {
+	transform: scale(1.06);
+	filter: saturate(1.2);
+}
+
+.milestone-card p {
+	margin-bottom: 0;
+	color: #526676;
+	font-size: 0.98rem;
+	line-height: 1.65;
+	opacity: 0;
+	transform: translateY(8px);
+	transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.milestone-card:hover p,
+.milestone-card:focus-within p {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.timeline-hint {
+	margin: 0;
+	padding: 0 7vw 42px;
+	color: var(--intel-blue);
+	font-size: 0.9rem;
+	font-weight: bold;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+	.hero {
+		min-height: 470px;
+		padding: 42px 24px;
+	}
+
+	.hero img {
+		width: 125px;
+		margin-bottom: 54px;
+	}
+
+	h1 {
+		font-size: clamp(2.8rem, 14vw, 4.5rem);
+	}
+
+	.hero p {
+		font-size: 1rem;
+	}
+
+	.timeline {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 48px 24px 36px;
+		overflow-x: visible;
+	}
+
+	.milestone-card {
+		flex-basis: auto;
+		min-height: 0;
+	}
+
+	.milestone-card p {
+		opacity: 1;
+		transform: none;
+	}
+
+	.timeline-hint {
+		padding: 0 24px 34px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.milestone-card,
+	.milestone-card img,
+	.milestone-card p {
+		transition: none;
+	}
+}
