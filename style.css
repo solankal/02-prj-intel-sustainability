@@ -127,15 +127,13 @@ h1 {
 	color: #526676;
 	font-size: 0.98rem;
 	line-height: 1.65;
-	opacity: 0;
-	transform: translateY(8px);
-	transition: opacity 220ms ease, transform 220ms ease;
+	opacity: 0.68;
+	transition: opacity 220ms ease;
 }
 
 .milestone-card:hover p,
 .milestone-card:focus-within p {
 	opacity: 1;
-	transform: translateY(0);
 }
 
 .timeline-hint {
@@ -146,6 +144,47 @@ h1 {
 	font-weight: bold;
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
+}
+
+.newsletter-section {
+	background: var(--intel-pale-blue);
+}
+
+.newsletter-panel {
+	color: var(--intel-ink);
+	background: var(--white);
+	border-top: 4px solid var(--intel-blue);
+	box-shadow: 0 8px 22px rgba(0, 60, 113, 0.1);
+}
+
+.newsletter-panel h2 {
+	color: var(--intel-deep-blue);
+}
+
+.newsletter-panel .form-text {
+	color: #405a6c;
+}
+
+.newsletter-panel .btn-primary {
+	--bs-btn-bg: var(--intel-blue);
+	--bs-btn-border-color: var(--intel-blue);
+	--bs-btn-hover-bg: var(--intel-deep-blue);
+	--bs-btn-hover-border-color: var(--intel-deep-blue);
+}
+
+.site-footer {
+	color: var(--white);
+	background: var(--intel-deep-blue);
+}
+
+.footer-link {
+	color: var(--white);
+	text-underline-offset: 3px;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+	color: #a9ddf7;
 }
 
 @media (max-width: 700px) {
@@ -178,11 +217,6 @@ h1 {
 	.milestone-card {
 		flex-basis: auto;
 		min-height: 0;
-	}
-
-	.milestone-card p {
-		opacity: 1;
-		transform: none;
 	}
 
 	.timeline-hint {

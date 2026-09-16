@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -137,5 +138,79 @@
     </div>
   </section>
   <p class="timeline-hint">Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <!-- Newsletter Section: Bootstrap creates three responsive columns. -->
+  <section class="newsletter-section py-5" aria-labelledby="newsletter-title">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-12 col-md-4">
+          <div class="newsletter-panel h-100 p-4">
+            <h2 id="newsletter-title" class="h3">Stay informed</h2>
+            <p id="newsletter-description">Receive occasional updates about Intel's sustainability progress.</p>
+            <form action="#" method="post">
+              <div class="mb-3">
+                <label class="form-label" for="subscriber-email">Email address</label>
+                <input class="form-control" type="email" id="subscriber-email" name="email" autocomplete="email" aria-describedby="newsletter-description email-help" required />
+                <div id="email-help" class="form-text">We will only use your email for this newsletter.</div>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="subscriber-consent" required />
+                <label class="form-check-label" for="subscriber-consent">I agree to receive sustainability news.</label>
+              </div>
+              <button class="btn btn-primary w-100" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="newsletter-panel h-100 p-4">
+            <h2 class="h3">What you will receive</h2>
+            <ul class="mb-0 ps-3">
+              <li class="mb-3">Clear updates on climate and energy goals</li>
+              <li class="mb-3">Stories about responsible innovation</li>
+              <li>News about partnerships and progress</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="newsletter-panel h-100 p-4">
+            <h2 class="h3">Your questions</h2>
+            <div class="accordion" id="newsletter-questions">
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="question-one-heading">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#question-one" aria-expanded="true" aria-controls="question-one">How often will I hear from Intel?</button>
+                </h3>
+                <div id="question-one" class="accordion-collapse collapse show" aria-labelledby="question-one-heading" data-bs-parent="#newsletter-questions">
+                  <div class="accordion-body">We send occasional updates when there is meaningful news to share.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="question-two-heading">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-two" aria-expanded="false" aria-controls="question-two">Can I unsubscribe?</button>
+                </h3>
+                <div id="question-two" class="accordion-collapse collapse" aria-labelledby="question-two-heading" data-bs-parent="#newsletter-questions">
+                  <div class="accordion-body">Yes. Every newsletter includes a clear unsubscribe link.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer py-4">
+    <div class="container d-md-flex justify-content-between align-items-center gap-3">
+      <p class="mb-2 mb-md-0">&copy; 2026 Intel Corporation. All rights reserved.</p>
+      <nav aria-label="Footer navigation">
+        <a href="#" class="footer-link me-3">Privacy Policy</a>
+        <a href="#" class="footer-link me-3">Terms of Use</a>
+        <a href="#" class="footer-link">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
